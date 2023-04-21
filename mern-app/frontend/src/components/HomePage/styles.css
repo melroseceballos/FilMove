@@ -1,0 +1,26 @@
+.movieDiv{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 5rem;
+    justify-content: center;
+
+}
+.movieContainer{
+    position: relative;
+    width: 16%;
+    padding-bottom: 5rem;
+}
+.movieTitle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    padding: 5px;
+    font-size: 10px;
+    background-color: rgba(63, 25, 216, 0.442);
+    color: wheat;
+}
+.movieContainer img{
+    height: 15rem;
+}
