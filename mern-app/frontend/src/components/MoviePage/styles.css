@@ -1,0 +1,37 @@
+.movieShow h1{
+    text-align: center;
+    margin-left: 0.5rem
+}
+.movieShow img{
+    height: 30rem;
+    padding-left: 1rem;
+}
+.overview{
+    background-color: rgba(0, 255, 255, 0.148);
+    width: 16.8%;
+    margin-top: -1.2rem;
+    padding-top: .5rem;
+    text-align: center;
+    margin-left: 1rem;
+}
+.movie{
+   margin-left: 30rem;
+   margin-top: -48rem;
+   border: 3px solid #ff8552;
+   text-align: center;
+   width: 70%;
+   height: 20rem;
+   padding-top: 10rem;
+}
+.reviews{
+    margin-left: 30rem;
+    border: 2px solid white;
+    width: 70%;
+    text-align: center;
+    padding-top: 10rem;
+    padding-bottom: 5rem;
+    margin-top: .5rem;
+}
+.synopsis{
+    padding: .3rem;
+}
