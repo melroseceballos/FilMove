@@ -1,4 +1,4 @@
-/************ REQUIRING MODELS*/
+/************ REQUIRING MODULES*/
 require('dotenv').config()
 const express = require('express')
 
@@ -7,7 +7,7 @@ const express = require('express')
 const db = require('./models')
 
 /************** REQUIRING ROOTES FROM CONTROLLERS */
-
+const reviewCTRL = require('./controllers/review')
 
 
 
@@ -21,7 +21,7 @@ app.use(express.json())
 
 
 /*************** MOUTING ROUTES */
-
+app.use('/movie/reviews', reviewCTRL)
 
 
 /*************** PORT */
