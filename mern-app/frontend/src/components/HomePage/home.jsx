@@ -19,22 +19,27 @@ function Home() {
     }, []);
 
 
-        // using useEffect and creating another function for pagination
-    useEffect(() =>{
+        // creating another function for pagination
         async function fetchMovies(){
             const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=50760a302380745ede7e1c3eee6ca282&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_watch_monetization_types=flatrate`)
             const {results} = await res.json()
             // creates a new array called prevMovies from the array ...pages
-            setPage(prevMovies)
+            setMovies(results)
         }
-        // calling fetchMovies() functions here
-        fetchMovies()
-    }, [page]);
-
-    // creating an onclick function that increments page by 1 using the setPage
-    function nextPage(){
-        setPage((prevPage) => prevPage + 1 )
-    }
+        /// GOT PAGINATION INFORMATION FROM W3SCHOOLS
+        function handleNextPage() {
+            setPage(prevPage => prevPage + 1)
+          }
+        
+          function handlePrevPage() {
+            if (page > 1) {
+              setPage(prevPage => prevPage - 1)
+            }
+          }
+        
+          useEffect(() => {
+            fetchMovies(page)
+          }, [page])
     return(
         <>
         <div className='movieDiv'>
@@ -55,8 +60,8 @@ function Home() {
             
         </div>
         <div className='buttonContainers'>
-            <button>Previous Page</button>
-            <button onClick={nextPage}>NextPage</button>
+            <button onClick={handlePrevPage}>Previous Page</button>
+            <button onClick={handleNextPage}>NextPage</button>
         </div>
         </>
     )
