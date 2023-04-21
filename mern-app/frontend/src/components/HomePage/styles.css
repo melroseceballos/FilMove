@@ -24,3 +24,13 @@
 .movieContainer img{
     height: 15rem;
 }
+.buttonContainers{
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    height: 2rem;
+    width: 100%;
+    gap: 20px;
+}
