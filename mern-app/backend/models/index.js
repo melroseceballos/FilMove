@@ -10,3 +10,6 @@ const mongodbUri = process.env.MONGODBURI;
 })().catch(err => console.log('Monngoose connection error:\n' + err))
 
 // Exporting models and seed data to server.js
+module.exports = {
+    Review: require('./review')
+}
