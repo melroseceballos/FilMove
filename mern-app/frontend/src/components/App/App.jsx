@@ -9,6 +9,12 @@ function App() {
     <>
     <nav>
       <Link to ='/'>Home</Link>
+      <Link to='#'> Genre </Link>
+      <Link to='#'>Top 100</Link>
+      <h1>FilMove</h1>
+      <Link to='#'>Watch Now</Link>
+      <Link to='#'>Search</Link>
+      <Link to='#'>Log In</Link>
     </nav>
     <main>
       <Routes>

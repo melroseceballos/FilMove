@@ -2,8 +2,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-top: 5rem;
+    padding-top: 7rem;
     justify-content: center;
+    margin-left: 8rem;
 
 }
 .movieContainer{
@@ -34,3 +35,9 @@
     width: 100%;
     gap: 20px;
 }
+
+.front{
+    height: 62.1rem;
+    width: 101%;
+    margin-left: -0.5rem;
+  }

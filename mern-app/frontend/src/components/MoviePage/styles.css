@@ -5,6 +5,7 @@
 .movieShow img{
     height: 30rem;
     padding-left: 1rem;
+    padding-top: 1rem;
 }
 .overview{
     background-color: rgba(0, 255, 255, 0.148);

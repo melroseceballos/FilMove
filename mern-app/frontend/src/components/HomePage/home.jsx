@@ -42,6 +42,10 @@ function Home() {
           }, [page])
     return(
         <>
+        <img className= 'front' src='/Filmove.svg'/>
+        <br />
+        <br />
+        <br/>
         <div className='movieDiv'>
             {movies.map((movie)=>   (
                 movie.title &&(
