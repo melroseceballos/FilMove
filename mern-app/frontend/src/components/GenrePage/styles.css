@@ -1,0 +1,26 @@
+.genreDiv{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding-top: 2rem;
+}
+.card{
+    border: 8px solid black;
+    height: 20rem;
+    width: 15rem;
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 20rem;
+    background-color: #fff187;
+    font-size: 3rem;
+    background-image: url('/GenreCards.svg');
+    background-size: cover;
+    background-position: center;
+    color: #1218e1;
+}
+.genreTitle{
+    text-align: center;
+    color: white;
+    padding-top: 3rem;
+}
