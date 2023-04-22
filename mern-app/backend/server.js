@@ -1,4 +1,4 @@
-/************ REQUIRING MODULES*/
+/************ REQUIRING MODULES */
 require('dotenv').config()
 const express = require('express')
 
