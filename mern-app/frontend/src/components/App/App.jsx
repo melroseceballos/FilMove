@@ -3,6 +3,7 @@ import Home from '../HomePage/home'
 import { Routes, Route, Link } from 'react-router-dom'
 import Movie from '../MoviePage/movie'
 import Genre from '../GenrePage/genre'
+import Action from '../Genres/Action'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/movie/:id' element={<Movie />} />
         <Route path='/genre' element={<Genre />} />
+        <Route path='/genre/action' element={<Action />} />
        
       </Routes>
     </main>
