@@ -91,25 +91,43 @@ function Genre() {
         </div>
         </Link>
 
-        
+        <Link to='/genre/romance'>
         <div className='card'>
           <div className='card-text'>Romance</div>
         </div>
+      </Link>
+
+        <Link to='/genre/scifi'>
         <div className='card'>
           <div className='card-text'>SciFi</div>
         </div>
+        </Link>
+        
+        <Link to="/genre/tvmovie">
         <div className='card'>
           <div className='card-text'>TV Movie</div>
         </div>
+        </Link>
+
+      <Link to='/genre/thriller'>
         <div className='card'>
           <div className='card-text'>Thriller</div>
         </div>
+        </Link>
+       
+
+        <Link to='/genre/war'>
         <div className='card'>
           <div className='card-text'>War</div>
         </div>
+        </Link>
+
+        <Link to='/genre/western'>
         <div className='card'>
           <div className='card-text'>Western</div>
         </div>
+        </Link>
+
         <div className='card'>
           <div className='card-text'>Shorts</div>
         </div>

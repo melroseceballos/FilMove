@@ -16,6 +16,13 @@ import History from '../Genres/History/History'
 import Horror from '../Genres/Horror/Horror'
 import Music from '../Genres/Music/Music'
 import Mystery from '../Genres/Mystery/Mystery'
+import Romance from '../Genres/Romance/Romance'
+import SciFi from '../Genres/SciFi/Scifi'
+import TvMovie from '../Genres/TVMovie/TvMovie'
+import Thriller from '../Genres/Thriller/Thriller'
+import War from '../Genres/War/War'
+import Western from '../Genres/Western/Western'
+
 
 function App() {
 
@@ -48,6 +55,12 @@ function App() {
        <Route path='/genre/horror' element={<Horror />} />
        <Route path='/genre/music' element={<Music />} />
        <Route path='/genre/mystery' element={<Mystery />} />
+       <Route path='/genre/romance' element={<Romance />} />
+       <Route path='/genre/scifi' element={<SciFi />} />
+       <Route path='/genre/tvmovie' element={<TvMovie />} />
+       <Route path='/genre/thriller' element={<Thriller />} />
+       <Route path='/genre/war' element={<War />} />
+       <Route path='/genre/western' element={<Western />} />
       </Routes>
     </main>
     </>
