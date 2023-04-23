@@ -1,12 +1,15 @@
 import './styles.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import getReviews from '../../../utils/backend'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
+    const [reviews, setReviews] = useState ([])
 
     //initializing params to useParams for api fetch
     const params = useParams();
+  
 
     //creating a async function to fetch movie per params.id
     //using useEffect
@@ -18,7 +21,6 @@ function Movie(){
             console.log(data)
             // setting data to become movie
             setMovies(data);
-           
         }
 
         // calling getData() function here
@@ -41,7 +43,18 @@ function Movie(){
         </div>
         </div>
         <div className='movie'>Movie Goes Here</div>
-        <div className='reviews'>Reviews Goes Here</div>
+        <div className='reviews'>
+            <p>Reviews Goes Here</p>
+        <ul>
+            {reviews.map((review, i) =>(
+                <>
+                <li key={i}>{review.content}</li>
+                </>
+                
+                
+            ))}
+        </ul>
+        </div>
         </>
     )
 }
