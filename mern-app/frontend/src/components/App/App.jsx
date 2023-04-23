@@ -23,6 +23,8 @@ import Thriller from '../Genres/Thriller/Thriller'
 import War from '../Genres/War/War'
 import Western from '../Genres/Western/Western'
 import Search from '../SearchPage/Search'
+import Top from '../TopPage/top'
+
 
 function App() {
 
@@ -31,7 +33,7 @@ function App() {
     <nav>
       <Link to ='/'>Home</Link>
       <Link to='/genre'>Genre</Link>
-      <Link to='#'>Top 100</Link>
+      <Link to='/top100'>Top 100</Link>
       <h1>FilMove</h1>
       <Link to='#'>Watch Now</Link>
       <Link to='/movie/search'>Search</Link>
@@ -42,6 +44,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/movie/:id' element={<Movie />} />
         <Route path='/genre' element={<Genre />} />
+        <Route path='/top100' element={<Top />} />
         <Route path='/genre/action' element={<Action />} />
        <Route path='/genre/adventure' element={<Adventure />} />
        <Route path='/genre/animation' element={<Animation />} />
