@@ -9,8 +9,8 @@ const db = require ('../models')
 /**************** ROUTES */
 
 // INDEX ROUTES 
-router.get('/', function (req, res) {
-    db.Review.find({})
+router.get('/movie/:movieId', function (req, res) {
+    db.Review.find({ movieId: req.params.movieId })
         .then(reviews => res.json(reviews))
 })
 
