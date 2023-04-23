@@ -7,6 +7,16 @@ import Action from '../Genres/Action/Action'
 import Adventure from '../Genres/Adventure/Adventure'
 import Animation from '../Genres/Animation/Animation'
 import Comedy from '../Genres/Comedy/comedy'
+import Crime from '../Genres/Crime/Crime'
+import Documentary from '../Genres/Documentary/Documentary'
+import Drama from '../Genres/Drama/Drama'
+import Family from '../Genres/Family/Family'
+import Fantasy from '../Genres/Fantasy/Fantasy'
+import History from '../Genres/History/History'
+import Horror from '../Genres/Horror/Horror'
+import Music from '../Genres/Music/Music'
+import Mystery from '../Genres/Mystery/Mystery'
+
 function App() {
 
   return (
@@ -29,6 +39,15 @@ function App() {
        <Route path='/genre/adventure' element={<Adventure />} />
        <Route path='/genre/animation' element={<Animation />} />
        <Route path='/genre/comedy' element={<Comedy />} />
+       <Route path='/genre/crime' element={<Crime />} />
+       <Route path='/genre/documentary' element={<Documentary />} />
+       <Route path='/genre/drama' element={<Drama />} />
+       <Route path='/genre/family' element={<Family />} />
+       <Route path='/genre/fantasy' element={<Fantasy />} />
+       <Route path='/genre/history' element={<History />} />
+       <Route path='/genre/horror' element={<Horror />} />
+       <Route path='/genre/music' element={<Music />} />
+       <Route path='/genre/mystery' element={<Mystery />} />
       </Routes>
     </main>
     </>
