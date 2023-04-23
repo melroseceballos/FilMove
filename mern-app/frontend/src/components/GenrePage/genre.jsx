@@ -12,20 +12,32 @@ function Genre() {
         <div className='card'>
           <div className='card-text'>Indigenous</div>
         </div>
+
         <Link to='/genre/action'>
         <div className='card'>
           <div className='card-text'>Action</div>
         </div>
         </Link>
+
+        <Link to='/genre/adventure'>
         <div className='card'>
           <div className='card-text'>Adventure</div>
         </div>
+        </Link>
+
+        <Link to='/genre/animation'>
         <div className='card'>
           <div className='card-text'>Animation</div>
         </div>
+        </Link>
+
+        <Link to='/genre/comedy'>
         <div className='card'>
           <div className='card-text'>Comedy</div>
         </div>
+        </Link>
+
+        
         <div className='card'>
           <div className='card-text'>Crime</div>
         </div>
