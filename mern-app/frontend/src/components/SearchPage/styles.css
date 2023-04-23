@@ -1,0 +1,25 @@
+form{
+    text-align: center;
+    margin-top: 5rem;
+}
+form input{
+    height: 2rem;
+    width: 30rem;
+}
+.searchResult{
+    margin-top: 2rem;
+    text-align: left;
+    margin-left: 8rem;
+    font-weight: 700;
+}
+.searchContainer{
+    width: 15rem;
+    display: inline-block;
+    margin-left: 15rem;
+    text-align: center;
+    
+}
+.searchContainer img{
+    height: 20rem;
+    vertical-align: middle;
+}

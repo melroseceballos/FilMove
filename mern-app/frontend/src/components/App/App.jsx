@@ -22,7 +22,7 @@ import TvMovie from '../Genres/TVMovie/TvMovie'
 import Thriller from '../Genres/Thriller/Thriller'
 import War from '../Genres/War/War'
 import Western from '../Genres/Western/Western'
-
+import Search from '../SearchPage/Search'
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
       <Link to='#'>Top 100</Link>
       <h1>FilMove</h1>
       <Link to='#'>Watch Now</Link>
-      <Link to='#'>Search</Link>
+      <Link to='/movie/search'>Search</Link>
       <Link to='#'>Log In</Link>
     </nav>
     <main>
@@ -61,6 +61,7 @@ function App() {
        <Route path='/genre/thriller' element={<Thriller />} />
        <Route path='/genre/war' element={<War />} />
        <Route path='/genre/western' element={<Western />} />
+       <Route path='/movie/search' element={<Search />} />
       </Routes>
     </main>
     </>
