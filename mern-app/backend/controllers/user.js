@@ -1,31 +1,31 @@
-/* 
----------------------------------------------------------------------------------------
-NOTE: Remember that all routes on this page are prefixed with `localhost:3000/api/users`
----------------------------------------------------------------------------------------
-*/
+// /* 
+// ---------------------------------------------------------------------------------------
+// NOTE: Remember that all routes on this page are prefixed with `localhost:3000/api/users`
+// ---------------------------------------------------------------------------------------
+// */
 
 
-/* Require modules
---------------------------------------------------------------- */
-const jwt = require('jwt-simple')
-const express = require('express')
-const router = express.Router()
+// /* Require modules
+// --------------------------------------------------------------- */
+// const jwt = require('jwt-simple')
+// const express = require('express')
+// const router = express.Router()
 
 
-/* Require the db connection and models
---------------------------------------------------------------- */
-const db = require('../models')
+// /* Require the db connection and models
+// --------------------------------------------------------------- */
+// const db = require('../models')
 
 
-/* Require the JWT config
---------------------------------------------------------------- */
-const config = require('../../jwt.config.js')
+// /* Require the JWT config
+// --------------------------------------------------------------- */
+// const config = require('../../jwt.config.js')
 
 
-/* Routes
---------------------------------------------------------------- */
+// /* Routes
+// --------------------------------------------------------------- */
 
 
-/* Export these routes so that they are accessible in `server.js`
---------------------------------------------------------------- */
-module.exports = router
+// /* Export these routes so that they are accessible in `server.js`
+// --------------------------------------------------------------- */
+// module.exports = router

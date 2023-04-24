@@ -15,7 +15,7 @@ router.get('/movie/:movieId', function (req, res) {
 })
 
 // CREATE ROUTE
-router.post('/', (req, res) => {
+router.post('/movie/reviews', (req, res) => {
     db.Review.create(req.body)
         .then(reviews => res.json(reviews))
 })
@@ -42,21 +42,21 @@ router.delete('/:id', (req, res) => {
         .then(() => res.send('You deleted comment ' + req.params.id))
 })
 
-// SIGN UP ROUTE
-router.post('/signup', (req, res) => {
-    // Create a new user
-    db.User.create(req.body)
-        .then(user => {
-            // if the database creates a user successfully, assign a JWT to the user and send the JWT as the response
-            const token = jwt.encode({ id: user.id }, config.jwtSecret)
-            res.json({ token: token })
-        })
-        // send an error if the database fails to create a user
-        .catch(() => {
-            res.sendStatus(401)
-                .json({ data: 'Could not create a new user, try again' })
-        })
-})
+// // SIGN UP ROUTE
+// router.post('/signup', (req, res) => {
+//     // Create a new user
+//     db.User.create(req.body)
+//         .then(user => {
+//             // if the database creates a user successfully, assign a JWT to the user and send the JWT as the response
+//             const token = jwt.encode({ id: user.id }, config.jwtSecret)
+//             res.json({ token: token })
+//         })
+//         // send an error if the database fails to create a user
+//         .catch(() => {
+//             res.sendStatus(401)
+//                 .json({ data: 'Could not create a new user, try again' })
+//         })
+// })
 
 /**************** EXPORTING ROUTES TO SERVER.JS */
 module.exports = router

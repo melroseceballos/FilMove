@@ -3,13 +3,13 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {getReviews} from '../../../utils/backend'
 import { postReview } from '../../../utils/backend'
-
+import { Link } from 'react-router-dom'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
     const [reviews, setReviews] = useState ([])
     const [showForm, setShowForm] = useState (false)
-    const [reviewForm, setReviewForm] = useState(null)
+    const [reviewForm] = useState(null)
     const [createForm, setCreateForm] = useState ({
         reviewer: '',
         rate: '',
@@ -36,7 +36,6 @@ function Movie(){
         // calling getData() function here
         getData()
     }, [])
-    console.log(reviews)
 
       /**************** HANDLE REVIEW CHANGE ********/
       function handleReviewChange(event) {
@@ -51,7 +50,27 @@ function Movie(){
 
 
     /******************* POST HANDLE SUBMIT */
-      
+    function handleSubmit(event){
+        event.preventDefault()
+        postReview({
+            ...createForm,
+            movieId: movie.id
+        }).then((res) => {
+            // Update the list of reviews after a new review is added
+            getReviews(params.id).then((reviews) => {
+                setReviews(reviews);
+                setShowForm(false);
+                // Reset the form after the review is submitted
+                setCreateForm({
+                    reviewer: '',
+                    rate: '',
+                    content: ''
+                });
+            });
+        });
+    }
+
+
         // CONDITION TO CLOSE FORM
         let btnText = 'Create a Review'
         if (showForm){
@@ -101,7 +120,7 @@ function Movie(){
             value={ createForm.content } 
             placeholder='Share Your Thoughts...'
             onChange={handleReviewChange}/>
-            <button>Post</button>
+            <button onClick={handleSubmit}>Post</button>
        </form>
            }
            
@@ -113,7 +132,9 @@ function Movie(){
                <p><strong>{review.rate} / 10 </strong></p>
               <p>{review.content}</p>
               <div className='reviewButtons'>
+              <Link to='/review/edit'>
               <button>Edit</button>
+              </Link>
               <button>Delete</button>
               </div>
 

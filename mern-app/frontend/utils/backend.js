@@ -9,6 +9,6 @@ export async function getReviews(movieId){
 }
 
 export async function postReview(review){
-        const { data } = await axios.post('/api/movie/reviews', review)
+        const { data } = await axios.post('/api/reviews/movie/reviews', review)
         return data
 }
