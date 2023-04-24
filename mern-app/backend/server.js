@@ -8,6 +8,7 @@ const db = require('./models')
 
 /************** REQUIRING ROOTES FROM CONTROLLERS */
 const reviewCTRL = require('./controllers/review')
+const usersCTRL = require('./controllers/user')
 
 
 
@@ -22,6 +23,7 @@ app.use(express.json())
 
 /*************** MOUTING ROUTES */
 app.use('/api/reviews', reviewCTRL)
+app.use('/api/users', usersCTRL)
 
 
 /*************** PORT */

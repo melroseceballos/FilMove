@@ -8,6 +8,7 @@ import { postReview } from '../../../utils/backend'
 function Movie(){
     const [movie,setMovies] = useState ({})
     const [reviews, setReviews] = useState ([])
+    const [showForm, setShowForm] = useState (false)
     const [reviewForm, setReviewForm] = useState(null)
     const [createForm, setCreateForm] = useState ({
         reviewer: '',
@@ -50,41 +51,14 @@ function Movie(){
 
 
     /******************* POST HANDLE SUBMIT */
-  
-    /******************** CREATE REVIEW FUNCTION ***********/
-        function ClickReviewForm(){
-            if(reviewForm === null){
-                setReviewForm(
-                <form className='createFormDiv'>
-                    <input 
-                    name='reviewer'
-                    value={ createForm.reviewer} 
-                    placeholder='Your Name'
-                    onChange={handleReviewChange} />
-                    <input 
-                    name='rate'
-                    value={ createForm.rate } 
-                    placeholder='Rate the movie from 0/10 ...'
-                    onChange={handleReviewChange}/>
-                    <textarea 
-                    name='content'
-                     value={ createForm.content } 
-                     placeholder='Share Your Thoughts...'
-                     onChange={handleReviewChange}/>
-                     <button>Post</button>
-                </form>
-               
-                    )
-            }else{
-                setReviewForm(null)
-            }
-        }
-
       
         // CONDITION TO CLOSE FORM
         let btnText = 'Create a Review'
-        if (reviewForm !== null){
+        if (showForm){
             btnText = "Close"
+        }
+        function toggleCreateForm(){
+            setShowForm(!showForm)
         }
     return(
         <>
@@ -107,10 +81,30 @@ function Movie(){
            <h1 className='reviewsTitle'>Reviews</h1>
 
         {/* // CREATE BUTTON //  */}
-           <button onClick={ClickReviewForm}>
+           <button onClick={toggleCreateForm}>
            {btnText}
            </button>
-           {reviewForm}
+           {showForm && 
+           <form className='createFormDiv'>
+           <input 
+           name='reviewer'
+           value={ createForm.reviewer} 
+           placeholder='Your Name'
+           onChange={handleReviewChange} />
+           <input 
+           name='rate'
+           value={ createForm.rate } 
+           placeholder='Rate the movie from 0/10 ...'
+           onChange={handleReviewChange}/>
+           <textarea 
+           name='content'
+            value={ createForm.content } 
+            placeholder='Share Your Thoughts...'
+            onChange={handleReviewChange}/>
+            <button>Post</button>
+       </form>
+           }
+           
         <ul>
             {reviews.map((review) =>(
                 <>
