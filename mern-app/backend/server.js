@@ -21,7 +21,7 @@ app.use(express.json())
 
 
 /*************** MOUTING ROUTES */
-app.use('/movie/reviews', reviewCTRL)
+app.use('/api/reviews', reviewCTRL)
 
 
 /*************** PORT */

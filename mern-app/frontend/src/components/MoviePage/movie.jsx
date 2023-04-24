@@ -1,7 +1,7 @@
 import './styles.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import getReviews from '../../../utils/backend'
+import {getReviews} from '../../../utils/backend'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
@@ -22,10 +22,12 @@ function Movie(){
             // setting data to become movie
             setMovies(data);
         }
-
+        getReviews(params.id).then(res => setReviews(res))
+        
         // calling getData() function here
         getData()
-    }, [params])
+    }, [])
+    console.log(reviews)
     return(
         <>
         <br />
