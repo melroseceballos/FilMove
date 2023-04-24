@@ -7,6 +7,11 @@ function Movie(){
     const [movie,setMovies] = useState ({})
     const [reviews, setReviews] = useState ([])
     const [reviewForm, setReviewForm] = useState(null)
+    const [createForm, setCreateForm] = useState ({
+        reviewer: null,
+        rate: null,
+        content: null,
+    })
 
     //initializing params to useParams for api fetch
     const params = useParams();
@@ -30,21 +35,50 @@ function Movie(){
     }, [])
     console.log(reviews)
 
+      /**************** CREATE FORM INPUT CHANGE ********/
+      function handleReviewChange(event)   {
+        console.log("Event target name:", event.target.name);
+        console.log("Event target value:", event.target.value);
+        setCreateForm({...createForm, 
+            [event.target.name]: event.target.value
+        })
+      }
+
+    /******************* POST HANDLE SUBMIT */
+    function handleSubmit(event){
+        event.preventDefault()
+
+    }
     /******************** CREATE REVIEW FUNCTION ***********/
         function ClickReviewForm(){
             if(reviewForm === null){
                 setReviewForm(
-                <div className='createFormDiv'>
-                    <input name='reviewer' placeholder='Your Name'/>
-                    <input name='rate' placeholder='Rate the movie from 0/10 ...' />
-                    <input name='content' placeholder='Share Your Thoughts...'/>
-                </div>
+                <form className='createFormDiv'>
+                    <input 
+                    name='reviewer' 
+                    value={ createForm.reviewer} 
+                    placeholder='Your Name'
+                    onChange={handleReviewChange} />
+                    <input 
+                    name='rate'  
+                    value={ createForm.rate } 
+                    placeholder='Rate the movie from 0/10 ...'
+                    onChange={handleReviewChange}/>
+                    <textarea 
+                    name='content'
+                     value={ createForm.content } 
+                     placeholder='Share Your Thoughts...'
+                     onChange={handleReviewChange}/>
+                     <button>Post</button>
+                </form>
+               
                     )
             }else{
                 setReviewForm(null)
             }
         }
 
+      
         // CONDITION TO CLOSE FORM
         let btnText = 'Create a Review'
         if (reviewForm !== null){
@@ -70,6 +104,7 @@ function Movie(){
         <div className='reviews'>
            <h1 className='reviewsTitle'>Reviews</h1>
 
+        {/* // CREATE BUTTON //  */}
            <button onClick={ClickReviewForm}>
            {btnText}
            </button>
