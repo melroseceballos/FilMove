@@ -2,16 +2,18 @@ import './styles.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {getReviews} from '../../../utils/backend'
+import { postReview } from '../../../utils/backend'
+
 
 function Movie(){
     const [movie,setMovies] = useState ({})
     const [reviews, setReviews] = useState ([])
     const [reviewForm, setReviewForm] = useState(null)
     const [createForm, setCreateForm] = useState ({
-        reviewer: null,
-        rate: null,
-        content: null,
-    })
+        reviewer: '',
+        rate: '',
+        content: '',
+})
 
     //initializing params to useParams for api fetch
     const params = useParams();
@@ -35,32 +37,32 @@ function Movie(){
     }, [])
     console.log(reviews)
 
-      /**************** CREATE FORM INPUT CHANGE ********/
-      function handleReviewChange(event)   {
-        console.log("Event target name:", event.target.name);
-        console.log("Event target value:", event.target.value);
-        setCreateForm({...createForm, 
-            [event.target.name]: event.target.value
+      /**************** HANDLE REVIEW CHANGE ********/
+      function handleReviewChange(event) {
+        setCreateForm({
+          ...createForm, 
+          [event.target.name]: event.target.value,
         })
+        console.log(createForm.reviewer)
+        
       }
+      console.log(reviewForm)
+
 
     /******************* POST HANDLE SUBMIT */
-    function handleSubmit(event){
-        event.preventDefault()
-
-    }
+  
     /******************** CREATE REVIEW FUNCTION ***********/
         function ClickReviewForm(){
             if(reviewForm === null){
                 setReviewForm(
                 <form className='createFormDiv'>
                     <input 
-                    name='reviewer' 
+                    name='reviewer'
                     value={ createForm.reviewer} 
                     placeholder='Your Name'
                     onChange={handleReviewChange} />
                     <input 
-                    name='rate'  
+                    name='rate'
                     value={ createForm.rate } 
                     placeholder='Rate the movie from 0/10 ...'
                     onChange={handleReviewChange}/>
@@ -109,8 +111,6 @@ function Movie(){
            {btnText}
            </button>
            {reviewForm}
-      
-
         <ul>
             {reviews.map((review) =>(
                 <>
