@@ -36,3 +36,14 @@
 .synopsis{
     padding: .3rem;
 }
+.reviewsTitle{
+    display: block;
+    margin-top: -8rem;
+}
+.reviewDiv{
+    background-color: wheat;
+    border: 2px solid orangered;
+    width: 103%;
+    text-align: center;
+    margin-left: -2.6rem;
+}

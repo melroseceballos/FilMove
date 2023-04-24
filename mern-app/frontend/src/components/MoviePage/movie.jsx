@@ -6,6 +6,7 @@ import {getReviews} from '../../../utils/backend'
 function Movie(){
     const [movie,setMovies] = useState ({})
     const [reviews, setReviews] = useState ([])
+    const [reviewForm, setReviewForm] = useState(null)
 
     //initializing params to useParams for api fetch
     const params = useParams();
@@ -28,6 +29,11 @@ function Movie(){
         getData()
     }, [])
     console.log(reviews)
+    // REVIEW FORM
+        function ReviewForm(){
+            setReviewForm(<h1>I am a review form!</h1>)
+            console.log(ReviewForm)
+        }
     return(
         <>
         <br />
@@ -46,11 +52,25 @@ function Movie(){
         </div>
         <div className='movie'>Movie Goes Here</div>
         <div className='reviews'>
-            <p>Reviews Goes Here</p>
+           <h1 className='reviewsTitle'>Reviews</h1>
+
+           <button onClick={ReviewForm}>Create A Review</button>
+           {reviewForm}
+
         <ul>
-            {reviews.map((review, i) =>(
+            {reviews.map((review) =>(
                 <>
-                <li key={i}>{review.content}</li>
+            <div key={review._id} className='reviewDiv'>
+            <h1>{review.reviewer}</h1>
+               <p><strong>{review.rate} / 10 </strong></p>
+              <p>{review.content}</p>
+              <div className='reviewButtons'>
+              <button>Edit</button>
+              <button>Delete</button>
+              </div>
+
+            </div>
+              
                 </>
                 
                 

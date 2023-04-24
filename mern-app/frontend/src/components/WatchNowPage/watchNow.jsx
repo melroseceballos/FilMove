@@ -30,7 +30,7 @@ function Watch(){
         <br/>
         <br/>
         <br />
-        <p>Don't like the movie? Click "Watch Now" to get a new movie!</p>
+        <p>Don't like the movie? Refresh to get a new movie!</p>
         <h1>{movie?.title}</h1>
         <Link to = {`/movie/${movie?.id}`}>
         <img key={movie?.id} src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} alt={movie?.title} className='searchMovies'/>
