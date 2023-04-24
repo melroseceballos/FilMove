@@ -29,10 +29,26 @@ function Movie(){
         getData()
     }, [])
     console.log(reviews)
-    // REVIEW FORM
-        function ReviewForm(){
-            setReviewForm(<h1>I am a review form!</h1>)
-            console.log(ReviewForm)
+
+    /******************** CREATE REVIEW FUNCTION ***********/
+        function ClickReviewForm(){
+            if(reviewForm === null){
+                setReviewForm(
+                <div className='createFormDiv'>
+                    <input name='reviewer' placeholder='Your Name'/>
+                    <input name='rate' placeholder='Rate the movie from 0/10 ...' />
+                    <input name='content' placeholder='Share Your Thoughts...'/>
+                </div>
+                    )
+            }else{
+                setReviewForm(null)
+            }
+        }
+
+        // CONDITION TO CLOSE FORM
+        let btnText = 'Create a Review'
+        if (reviewForm !== null){
+            btnText = "Close"
         }
     return(
         <>
@@ -54,8 +70,11 @@ function Movie(){
         <div className='reviews'>
            <h1 className='reviewsTitle'>Reviews</h1>
 
-           <button onClick={ReviewForm}>Create A Review</button>
+           <button onClick={ClickReviewForm}>
+           {btnText}
+           </button>
            {reviewForm}
+      
 
         <ul>
             {reviews.map((review) =>(

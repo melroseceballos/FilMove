@@ -47,3 +47,7 @@
     text-align: center;
     margin-left: -2.6rem;
 }
+.createFormDiv{
+    display: flex;
+    flex-direction: column;   
+}
