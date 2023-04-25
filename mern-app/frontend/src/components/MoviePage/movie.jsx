@@ -1,8 +1,8 @@
 import './styles.css'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {getReviews} from '../../../utils/backend'
-import { postReview, deleteReview } from '../../../utils/backend'
+import { postReview, deleteReview   } from '../../../utils/backend'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
@@ -14,11 +14,9 @@ function Movie(){
         rate: '',
         content: '',
 })
-
     //initializing params to useParams for api fetch
     const params = useParams();
-  
-
+    const navigate = useNavigate();
     //creating a async function to fetch movie per params.id
     //using useEffect
 
@@ -54,7 +52,7 @@ function Movie(){
         postReview({
             ...createForm,
             movieId: movie.id
-        }).then((res) => {
+        }).then(() => {
             // Update the list of reviews after a new review is added
             getReviews(params.id).then((reviews) => {
                 setReviews(reviews);
@@ -75,21 +73,18 @@ function Movie(){
         if (showForm){
             btnText = "Close"
         }
-
-        /////// TOGGLE CREATEFORM ////
         function toggleCreateForm(){
             setShowForm(!showForm)
         }
-        /// DELETE FUNCTIONALITY ///
-        function handleDelete(id) {
-            deleteReview(id).then(() => {
-              // Update the list of reviews after a review is deleted
-              getReviews(params.id).then((reviews) => {
-                setReviews(reviews);
-              });
+
+        function handleDelete(reviewId) {
+            deleteReview(reviewId).then(() => {
+                setReviews(reviews.filter(review => review._id !== reviewId));
+                getReviews(params.id).then((reviews) => {
+                    setReviews(reviews);
+                });
             });
-          }
-          
+        }
     return(
         <>
         <br />
@@ -143,7 +138,7 @@ function Movie(){
                <p><strong>{review.rate} / 10 </strong></p>
               <p>{review.content}</p>
               <div className='reviewButtons'>
-              <button>Edit</button>
+              <button onClick={() =>{navigate(`/review/edit/${review._id}`)}}>Edit</button>
               <button onClick={() => handleDelete(review._id)}>Delete</button>
               </div>
             </div>
