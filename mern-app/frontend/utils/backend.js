@@ -16,7 +16,10 @@ export async function getReviews(movieId){
 }
 
 // update route
-
+export async function updateReview(){
+  return axios.put(`/api/reviews/${reviewId}`)
+  .then (res => res.data)
+} 
 // Delete route
 export async function deleteReview(reviewId) {
         return axios.delete(`/api/reviews/movie/reviews/${reviewId}`)

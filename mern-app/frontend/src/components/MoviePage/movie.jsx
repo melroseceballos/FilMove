@@ -79,12 +79,10 @@ function Movie(){
 
         function handleDelete(reviewId) {
             deleteReview(reviewId).then(() => {
-                setReviews(reviews.filter(review => review._id !== reviewId));
-                getReviews(params.id).then((reviews) => {
-                    setReviews(reviews);
-                });
+              const updatedReviews = reviews.filter((review) => review._id !== reviewId);
+              setReviews(updatedReviews);
             });
-        }
+          }
     return(
         <>
         <br />
@@ -130,24 +128,20 @@ function Movie(){
        </form>
            }
            
-        <ul>
-            {reviews.map((review) =>(
-                <>
-            <div key={review._id} className='reviewDiv'>
-            <h1>{review.reviewer}</h1>
-               <p><strong>{review.rate} / 10 </strong></p>
-              <p>{review.content}</p>
-              <div className='reviewButtons'>
-              <button onClick={() =>{navigate(`/review/edit/${review._id}`)}}>Edit</button>
-              <button onClick={() => handleDelete(review._id)}>Delete</button>
-              </div>
-            </div>
-              
-                </>
-                
-                
-            ))}
-        </ul>
+           <ul>
+            {reviews.map((review) => (
+             <div className='reviewDiv' key={review._id}>
+        <h1>{review.reviewer}</h1>
+        <p><strong>{review.rate} / 10 </strong></p>
+        <p>{review.content}</p>
+        <div className='reviewButtons'>
+          <button onClick={() =>{navigate(`/review/edit/${review._id}`)}}>Edit</button>
+          <button onClick={() => handleDelete(review._id)}>Delete</button>
+        </div>
+      </div>
+  ))}
+</ul>
+
         </div>
         </>
     )

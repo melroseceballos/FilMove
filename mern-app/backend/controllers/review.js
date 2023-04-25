@@ -38,8 +38,6 @@ router.put('/:id', (req, res) => {
 
 // Destroy Route (DELETE/Delete)
 router.delete('/movie/reviews/:id', (req, res) => {
-    console.log('deleteroute')
-    console.log(req.params.id)
     db.Review.findByIdAndDelete(req.params.id)
         .then((data) => {
             // res.send('You deleted comment ' + req.params.id)
