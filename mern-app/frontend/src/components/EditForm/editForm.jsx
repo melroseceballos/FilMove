@@ -15,24 +15,15 @@ function EditReview() {
   const { id } = useParams();
 
   // Fetch the review data from the API when the component mounts
-  useEffect(() => {
-    setLoading(true);
-  
-    getReviews(id)
-      .then((review) => {
-        setFormValues({
-          reviewer: review.reviewer,
-          rate: review.rate,
-          content: review.content,
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-        setError('Failed to fetch review data');
-      })
-      .finally(() => setLoading(false));
-  }, [id]);
-  
+ useEffect(() => {
+    async function getData(){
+        const res = getReviews
+        const data = await res.json()
+        console.log(data)
+        setFormValues(data)
+    }
+    getData()
+ }, )
 
   function handleChange(event) {
     setFormValues({
@@ -42,19 +33,20 @@ function EditReview() {
   }
 
         ///// HANDLE SUBMIT ///
-  function handleSubmit(event) {
-    event.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    // Update the review data in the API
-    updateReview(id, formValues,)
-      .then(() => {
-        // Navigate back to the movie page after the review is updated
-        navigate(-1);
-      })    
-  }
-
+        function handleSubmit(event) {
+            event.preventDefault();
+            setLoading(true);
+            setError(null);
+          
+            // Update the review data in the API
+            updateReview(id, formValues)
+              .then(() => {
+                // Navigate back to the movie page after the review is updated
+                navigate(-1);
+              })
+              .finally(() => setLoading(false));
+          }
+          
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -73,7 +65,7 @@ function EditReview() {
             type="text"
             id="reviewer"
             name="reviewer"
-            value={formValues.reviewer || ''}
+            value={formValues.reviewer}
             onChange={handleChange}
           />
         </div>
@@ -83,7 +75,7 @@ function EditReview() {
             type="number"
             id="rate"
             name="rate"
-            value={formValues.rate || 0}
+            value={formValues.rate }
             onChange={handleChange}
           />
         </div>
@@ -92,7 +84,7 @@ function EditReview() {
           <textarea
             id="content"
             name="content"
-            value={formValues.content || ''}
+            value={formValues.content }
             onChange={handleChange}
           />
         </div>
