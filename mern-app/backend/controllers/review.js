@@ -37,7 +37,7 @@ router.put('/:id', (req, res) => {
 })
 
 // Destroy Route (DELETE/Delete)
-router.delete('/:id', (req, res) => {
+router.delete('/movie/reviews/:id', (req, res) => {
     db.Review.findByIdAndRemove(req.params.id)
         .then(() => res.send('You deleted comment ' + req.params.id))
 })

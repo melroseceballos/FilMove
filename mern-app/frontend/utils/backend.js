@@ -15,11 +15,15 @@ export async function getReviews(movieId){
         
 }
 
-// //update route / update
-// export async function updateReviews(movieId, reviewData) {
-//         const response = await axios.put(`/movie/reviews/${movieId}`, reviewData)
-//         const updatedReview = response.data
-//         console.log(updatedReview)
-//         return updatedReview
-//       }
+// update route
 
+// Delete route
+export async function deleteReview(reviewId) {
+        return axios.delete(`/api/reviews/movie/reviews/${reviewId}`)
+          .then(res => res.data)
+          .catch(error => {
+            console.error(`Error deleting review ${reviewId}: ${error}`);
+            throw error;
+          });
+      }
+      

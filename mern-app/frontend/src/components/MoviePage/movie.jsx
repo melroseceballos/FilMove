@@ -2,7 +2,7 @@ import './styles.css'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {getReviews} from '../../../utils/backend'
-import { postReview } from '../../../utils/backend'
+import { postReview, deleteReview } from '../../../utils/backend'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
@@ -14,6 +14,7 @@ function Movie(){
         rate: '',
         content: '',
 })
+
     //initializing params to useParams for api fetch
     const params = useParams();
   
@@ -74,9 +75,21 @@ function Movie(){
         if (showForm){
             btnText = "Close"
         }
+
+        /////// TOGGLE CREATEFORM ////
         function toggleCreateForm(){
             setShowForm(!showForm)
         }
+        /// DELETE FUNCTIONALITY ///
+        function handleDelete(id) {
+            deleteReview(id).then(() => {
+              // Update the list of reviews after a review is deleted
+              getReviews(params.id).then((reviews) => {
+                setReviews(reviews);
+              });
+            });
+          }
+          
     return(
         <>
         <br />
@@ -131,7 +144,7 @@ function Movie(){
               <p>{review.content}</p>
               <div className='reviewButtons'>
               <button>Edit</button>
-              <button>Delete</button>
+              <button onClick={() => handleDelete(review._id)}>Delete</button>
               </div>
             </div>
               
