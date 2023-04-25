@@ -14,7 +14,6 @@ function Movie(){
         rate: '',
         content: '',
 })
-
     //initializing params to useParams for api fetch
     const params = useParams();
   
