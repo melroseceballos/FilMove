@@ -6,13 +6,11 @@ import { getReviews, updateReview } from '../../../utils/backend';
 function EditReview() {
   const [formValues, setFormValues] = useState({
     reviewer: '',
-    rate: '',
+    rate: 0,
     content: '',
   });
-
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -43,23 +41,18 @@ function EditReview() {
     });
   }
 
+        ///// HANDLE SUBMIT ///
   function handleSubmit(event) {
     event.preventDefault();
-
     setLoading(true);
     setError(null);
 
     // Update the review data in the API
-    updateReview(id, formValues)
+    updateReview(id, formValues,)
       .then(() => {
         // Navigate back to the movie page after the review is updated
         navigate(-1);
-      })
-      .catch((error) => {
-        console.error(error);
-        setError('Failed to update review data');
-      })
-      .finally(() => setLoading(false));
+      })    
   }
 
   if (loading) {
@@ -80,7 +73,7 @@ function EditReview() {
             type="text"
             id="reviewer"
             name="reviewer"
-            value={formValues.reviewer}
+            value={formValues.reviewer || ''}
             onChange={handleChange}
           />
         </div>
@@ -90,7 +83,7 @@ function EditReview() {
             type="number"
             id="rate"
             name="rate"
-            value={formValues.rate}
+            value={formValues.rate || 0}
             onChange={handleChange}
           />
         </div>
@@ -99,7 +92,7 @@ function EditReview() {
           <textarea
             id="content"
             name="content"
-            value={formValues.content}
+            value={formValues.content || ''}
             onChange={handleChange}
           />
         </div>

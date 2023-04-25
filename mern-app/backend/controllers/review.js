@@ -27,7 +27,7 @@ router.get('/:id', function (req, res) {
 })
 
 // UPDATE ROUTE
-router.put('/:id', (req, res) => {
+router.put('/:reviewid', (req, res) => {
     db.Review.findByIdAndUpdate(
         req.params.id,
         req.body,
@@ -39,9 +39,9 @@ router.put('/:id', (req, res) => {
 // Destroy Route (DELETE/Delete)
 router.delete('/movie/reviews/:id', (req, res) => {
     db.Review.findByIdAndDelete(req.params.id)
-        .then((data) => {
-            // res.send('You deleted comment ' + req.params.id)
-            console.log(data)
+        .then(() => {
+            res.send('You deleted comment ' + req.params.id)
+           
         } )
 })
 

@@ -16,7 +16,7 @@ export async function getReviews(movieId){
 }
 
 // update route
-export async function updateReview(){
+export async function updateReview(reviewId){
   return axios.put(`/api/reviews/${reviewId}`)
   .then (res => res.data)
 } 
