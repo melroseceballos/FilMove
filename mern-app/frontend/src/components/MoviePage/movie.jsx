@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {getReviews} from '../../../utils/backend'
 import { postReview } from '../../../utils/backend'
-import { Link } from 'react-router-dom'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
@@ -132,12 +131,9 @@ function Movie(){
                <p><strong>{review.rate} / 10 </strong></p>
               <p>{review.content}</p>
               <div className='reviewButtons'>
-              <Link to='/review/edit'>
               <button>Edit</button>
-              </Link>
               <button>Delete</button>
               </div>
-
             </div>
               
                 </>

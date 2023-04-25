@@ -25,7 +25,6 @@ import Western from '../Genres/Western/Western'
 import Search from '../SearchPage/Search'
 import Top from '../TopPage/top'
 import Watch from '../WatchNowPage/watchNow'
-import Edit from '../EditPage/editForm'
 
 function App() {
 
@@ -67,7 +66,6 @@ function App() {
        <Route path='/genre/war' element={<War />} />
        <Route path='/genre/western' element={<Western />} />
        <Route path='/movie/search' element={<Search />} />
-       <Route path='/review/edit' element={<Edit />} />
       </Routes>
     </main>
     </>
