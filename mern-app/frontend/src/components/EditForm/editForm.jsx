@@ -48,7 +48,7 @@ function EditReview() {
           }
           
   if (loading) {
-    return <p>Loading...</p>;
+    return <p>Your review is loading...</p>;
   }
 
   if (error) {
@@ -57,7 +57,10 @@ function EditReview() {
 
   return (
     <div>
-      <h1>Edit Review</h1>
+      <br />
+      <br />
+      <br />
+      <h1>Edit Your Review</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="reviewer">Reviewer</label>
