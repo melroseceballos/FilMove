@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {getReviews} from '../../../utils/backend'
 import { postReview, deleteReview   } from '../../../utils/backend'
+import Trailer from '../Trailers/trailer'
 
 function Movie(){
     const [movie,setMovies] = useState ({})
@@ -99,7 +100,11 @@ function Movie(){
         <p><strong>Vote Count:</strong>{movie.vote_count}</p>
         </div>
         </div>
-        <div className='movie'>Movie Goes Here</div>
+        <div className='movie'>
+            <h1>Movie Goes Here</h1>
+            <Trailer />
+        
+        </div>
         <div className='reviews'>
            <h1 className='reviewsTitle'>Reviews</h1>
 
