@@ -1,4 +1,5 @@
 import './styles.css'
+import AuthFormPage from '../AuthFormPage'
 import Home from '../HomePage/home'
 import { Routes, Route, Link } from 'react-router-dom'
 import Movie from '../MoviePage/movie'
@@ -35,14 +36,16 @@ function App() {
       <Link to ='/'>Home</Link>
       <Link to='/genre'>Genre</Link>
       <Link to='/top100'>Top 100</Link>
-      <h1>FilMove</h1>
+      {/* <h1>FilMove</h1> */}
       <Link to='/watchNow'>Watch Now</Link>
       <Link to='/movie/search'>Search</Link>
-      <Link to='#'>Log In</Link>
+      <Link to="/auth/login">Log In</Link>
+      <Link to="/auth/signup">Sign Up</Link>
     </nav>
     <main>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path="/auth/:formType" element={<AuthFormPage />} />
         <Route path='/movie/:id' element={<Movie />} />
         <Route path='/genre' element={<Genre />} />
         <Route path='/top100' element={<Top />} />
