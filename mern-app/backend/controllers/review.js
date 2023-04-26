@@ -24,10 +24,8 @@ const authMiddleware = (req, res, next) => {
     const token = req.headers.authorization;
     if (token) {
         try {
-            console.log('1')
             // Decode the token using the secret key and add the decoded payload to the request object
             const decodedToken = jwt.decode(token, config.jwtSecret);
-            console.log('2')
             req.user = decodedToken;
             next();
         } catch (err) {
@@ -71,15 +69,14 @@ router.get('/:movieId', function (req, res) {
 
 ////////// REVISED USER CREATE ROUTE
 router.post('/movie/reviews', authMiddleware, (req, res) => {
-    res.send("hello")
     // Perform any actions that require authorization
-    // db.Review.create({
-    //     ...req.body,
-    //     // The auth middleware validated the JWT token 
-    //     // and added the decoded payload to the req.user object
-    //     userId: req.user.id
-    // })
-    //     .then(reviews => res.json(reviews))
+    db.Review.create({
+        ...req.body,
+        // The auth middleware validated the JWT token 
+        // and added the decoded payload to the req.user object
+        userId: req.user.id
+    })
+        .then(reviews => res.json(reviews))
 })
 
 
