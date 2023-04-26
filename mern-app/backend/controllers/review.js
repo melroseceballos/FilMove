@@ -11,9 +11,23 @@ const db = require ('../models')
 // INDEX ROUTES 
 router.get('/movie/:movieId', function (req, res) {
     db.Review.find({ movieId: req.params.movieId })
-        .then(reviews => res.json(reviews))
+        .then(reviews =>{
+            res.json(reviews)
+        }
+        
+        )
+        
 })
-
+//  REVIEW SHOW ROUTE FOR EDIT FORM
+router.get('/:movieId', function (req, res) {
+    db.Review.findById(req.params.movieId)
+        .then(reviews =>{
+            res.json(reviews)
+        }
+        
+        )
+        
+})
 // CREATE ROUTE
 router.post('/movie/reviews', (req, res) => {
     db.Review.create(req.body)
@@ -22,6 +36,7 @@ router.post('/movie/reviews', (req, res) => {
 
 // SHOW ROUTE
 router.get('/:id', function (req, res) {
+    console.log(req.params.id)
     db.Review.findById(req.params.id)
         .then(reviews => res.json(reviews))
 })
@@ -29,7 +44,7 @@ router.get('/:id', function (req, res) {
 // UPDATE ROUTE
 router.put('/:reviewid', (req, res) => {
     db.Review.findByIdAndUpdate(
-        req.params.id,
+        req.params.reviewid,
         req.body,
         { new: true }
     )

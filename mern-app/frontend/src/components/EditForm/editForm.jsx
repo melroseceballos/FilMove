@@ -1,30 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getReviews, updateReview } from '../../../utils/backend';
+import { updateReview,showReviews } from '../../../utils/backend';
 
 
 function EditReview() {
   const [formValues, setFormValues] = useState({
     reviewer: '',
-    rate: 0,
+    rate: '',
     content: '',
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { review_id } = useParams();
+  console.log(review_id)
 
   // Fetch the review data from the API when the component mounts
  useEffect(() => {
     async function getData(){
-        const res = getReviews
-        const data = await res.json()
-        console.log(data)
-        setFormValues(data)
+        const res = await showReviews(review_id)
+        setFormValues(res)
     }
     getData()
- }, )
-
+ }, [])
+    console.log(formValues)
   function handleChange(event) {
     setFormValues({
       ...formValues,
@@ -39,7 +38,7 @@ function EditReview() {
             setError(null);
           
             // Update the review data in the API
-            updateReview(id, formValues)
+            updateReview(review_id, formValues)
               .then(() => {
                 // Navigate back to the movie page after the review is updated
                 navigate(-1);

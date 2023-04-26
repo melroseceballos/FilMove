@@ -15,11 +15,22 @@ export async function getReviews(movieId){
         
 }
 
-// update route
-export async function updateReview(reviewId){
-  return axios.put(`/api/reviews/${reviewId}`)
+// fetches the review
+export async function showReviews(movieId){
+  const res = await fetch (`/api/reviews/${movieId}`)
+  const reviews = await res.json()
+  console.log(reviews)
+  return reviews
+  
+}
+
+// posting update route
+export async function updateReview(reviewId, formValues){
+  return axios.put(`/api/reviews/${reviewId}`, formValues)
   .then (res => res.data)
 } 
+
+
 // Delete route
 export async function deleteReview(reviewId) {
         return axios.delete(`/api/reviews/movie/reviews/${reviewId}`)
