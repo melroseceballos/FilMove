@@ -12,5 +12,5 @@ const mongodbUri = process.env.MONGODBURI;
 // Exporting models and seed data to server.js
 module.exports = {
     Review: require('./review'),
-    // User: require ('./user')
+    User: require ('./user')
 }

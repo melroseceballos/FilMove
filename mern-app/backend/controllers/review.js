@@ -60,21 +60,5 @@ router.delete('/movie/reviews/:id', (req, res) => {
         } )
 })
 
-// // SIGN UP ROUTE
-// router.post('/signup', (req, res) => {
-//     // Create a new user
-//     db.User.create(req.body)
-//         .then(user => {
-//             // if the database creates a user successfully, assign a JWT to the user and send the JWT as the response
-//             const token = jwt.encode({ id: user.id }, config.jwtSecret)
-//             res.json({ token: token })
-//         })
-//         // send an error if the database fails to create a user
-//         .catch(() => {
-//             res.sendStatus(401)
-//                 .json({ data: 'Could not create a new user, try again' })
-//         })
-// })
-
 /**************** EXPORTING ROUTES TO SERVER.JS */
 module.exports = router
