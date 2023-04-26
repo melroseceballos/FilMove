@@ -1,12 +1,12 @@
 import axios from 'axios'
 
-//create route / create
+/***************** CREATE ROUTE */
 export async function postReview(review){
         const { data } = await axios.post('/api/reviews/movie/reviews', review)
         return data
 }
 
-// index route / read
+/******************* INDEX ROUTE */
 export async function getReviews(movieId){
         const res = await fetch (`/api/reviews/movie/${movieId}`)
         const reviews = await res.json()
