@@ -113,14 +113,34 @@ router.put('/:reviewid', authMiddleware, async (req, res) => {
   
 
 
-// Destroy Route (DELETE/Delete)
-router.delete('/movie/reviews/:id', (req, res) => {
-    db.Review.findByIdAndDelete(req.params.id)
-        .then(() => {
-            res.send('You deleted comment ' + req.params.id)
+// // Destroy Route (DELETE/Delete)
+// router.delete('/movie/reviews/:id', (req, res) => {
+//     db.Review.findByIdAndDelete(req.params.id)
+//         .then(() => {
+//             res.send('You deleted comment ' + req.params.id)
            
-        } )
-})
+//         } )
+// })
 
+/********************* REVISED DELETE ROUTE */
+router.delete('/movie/reviews/:id', authMiddleware, async (req, res) => {
+    try {
+        // Check if the user who sent the delete request is the same user who created the comment
+        const userReview = await db.Review.findOneAndDelete({
+            _id: req.params.id,
+            userId: req.user.id
+        });
+
+        if (!userReview) {
+            return res.status(401).json({ message: 'Invalid user or token' });
+        }
+
+        res.send('You deleted comment ' + req.params.id);
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Internal Server Error');
+    }
+});
 /**************** EXPORTING ROUTES TO SERVER.JS */
 module.exports = router
