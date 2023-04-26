@@ -87,15 +87,31 @@ router.get('/:id', function (req, res) {
         .then(reviews => res.json(reviews))
 })
 
-// UPDATE ROUTE
-router.put('/:reviewid', (req, res) => {
-    db.Review.findByIdAndUpdate(
-        req.params.reviewid,
-        req.body,
+// // UPDATE ROUTE
+// router.put('/:reviewid', (req, res) => {
+//     db.Review.findByIdAndUpdate(
+//         req.params.reviewid,
+//         req.body,
+//         { new: true }
+//     )
+//         .then(reviews => res.json(reviews))
+// })
+
+/********************* REVISED UPDATE ROUTE */
+router.put('/:reviewid', authMiddleware, async (req, res) => {
+    try {
+      const updatedReview = await db.Review.findByIdAndUpdate(
+        req.params.reviewid, // <-- Update the ID parameter to "reviewid"
+        { $set: req.body },
         { new: true }
-    )
-        .then(reviews => res.json(reviews))
-})
+      );
+      res.json(updatedReview);
+    } catch (err) {
+      res.status(400).json({ message: err.message });
+    }
+  });
+  
+
 
 // Destroy Route (DELETE/Delete)
 router.delete('/movie/reviews/:id', (req, res) => {

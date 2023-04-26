@@ -15,7 +15,7 @@ export async function getReviews(movieId){
         
 }
 
-// fetches the review
+/********************* SHOWS REVIEW IN EDITFORM */
 export async function showReviews(movieId){
   const res = await fetch (`/api/reviews/${movieId}`)
   const reviews = await res.json()
@@ -24,14 +24,14 @@ export async function showReviews(movieId){
   
 }
 
-// posting update route
+/******************** USED WHEN POST IS HIT IN REVIEWS UPDATE */
 export async function updateReview(reviewId, formValues){
   return axios.put(`/api/reviews/${reviewId}`, formValues)
   .then (res => res.data)
 } 
 
 
-// Delete route
+/*********************** DELETE ROUTE */
 export async function deleteReview(reviewId) {
         return axios.delete(`/api/reviews/movie/reviews/${reviewId}`)
           .then(res => res.data)
