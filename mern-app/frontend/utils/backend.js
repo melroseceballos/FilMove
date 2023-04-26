@@ -9,7 +9,7 @@ export async function signUp(user) {
 }
 
 export async function logIn(user) {
-  const { data } = await axios.put('/api/users/login', user);
+  const { data } = await axios.post('/api/users/login', user);
   return data;
 }
 

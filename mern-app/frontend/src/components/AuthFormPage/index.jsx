@@ -15,6 +15,23 @@ function AuthFormPage() {
         setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
+    // Execute auth logic on form submit
+async function handleSubmit(event) {
+    // prevent the page from refreshing when the form is submitted
+    event.preventDefault()
+    // check what the URL parameter is to determine what request to make
+    if (formType === 'login') {
+        const { token } = await logIn(formData)
+        localStorage.setItem('userToken', token)
+    } else {
+        const { token } = await signUp(formData)
+        localStorage.setItem('userToken', token)
+    }
+    // redirect to the home page after signing/logging in
+    navigate('/')
+}
+
+
     let actionText
 formType === 'login' ? actionText = 'Log In' : actionText = 'Sign Up'
 
@@ -23,7 +40,7 @@ formType === 'login' ? actionText = 'Log In' : actionText = 'Sign Up'
         <div>
             <div>
                 <h2>Login</h2>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email">Email</label>
                         <input
