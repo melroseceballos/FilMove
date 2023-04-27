@@ -27,6 +27,7 @@ import Search from '../SearchPage/Search'
 import Top from '../TopPage/top'
 import Watch from '../WatchNowPage/watchNow'
 import Edit from '../EditForm/editForm'
+import Handtrack from '../HandTrack/handtrack'
 
 function App() {
 
@@ -41,9 +42,11 @@ function App() {
       <Link to='/movie/search'>Search</Link>
       <Link to="/auth/login">Log In</Link>
       <Link to="/auth/signup">Sign Up</Link>
+      <Link to='/handtrack'>Hand Track</Link>
     </nav>
     <main>
       <Routes>
+        <Route path='/handtrack' element= {<Handtrack />} />
         <Route path='/' element={<Home />} />
         <Route path="/auth/:formType" element={<AuthFormPage />} />
         <Route path='/movie/:id' element={<Movie />} />

@@ -89,7 +89,7 @@ function Movie(){
         <br />
         <br />
         <br />
-        <h1>Test 5</h1>
+       <p>Dev branch </p>
         <div className='movieShow'>
         <br />
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />

@@ -7,6 +7,7 @@ function Genre() {
       <br />
       <br />
       <br />
+      <p>Dev Branch</p>
       <h1 className='genreTitle'>Choose Your Genre</h1>
       <div className='genreDiv'>
         <div className='card'>
