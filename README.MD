@@ -1,9 +1,9 @@
 Hi There! ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif) Welcome to FilMove!
 ========================================================================================================================================
 
-![]("https://i.ibb.co/tmHntSX/Screenshot-2023-04-27-at-9-10-25-AM.png")
+![](SS.png)
 ### FilMove is a fullstack application built to enchace user experience when browsing through movies! Filmove is created through React for frontend functionality and Express for backend. 
-========================================================================================================================================
+
 
 ## Link to FilMove App
 (placeholder)
