@@ -80,7 +80,7 @@ function Handtrack() {
 
     if (predictions[0] && predictions[0].landmarks) {
       // Draw the landmarks on the canvas
-      drawLandmarks(context, predictions[0].landmarks, { visibilityMin: 0.65, color: '#00FF00', lineWidth: 2 });
+      drawLandmarks(context, predictions[0].landmarks, { visibilityMin: 0.65, color: '#00FF00', lineWidth: 0.5 },  {x: 10, y: 10});
     
       // Calculate the bounding box
       const landmarks = predictions[0].landmarks;
@@ -90,18 +90,25 @@ function Handtrack() {
       let maxY = landmarks[0][1];
       for (let i = 1; i < landmarks.length; i++) {
         const landmark = landmarks[i];
-        minX = Math.min(minX, landmark[0]);
-        minY = Math.min(minY, landmark[1]);
-        maxX = Math.max(maxX, landmark[0]);
+        minX = Math.min(minX, landmark[5] -50);
+        minY = Math.min(minY, landmark[1] -50 );
+        maxX = Math.max(maxX, landmark[1]);
         maxY = Math.max(maxY, landmark[1]);
       }
+      const handWidth = maxX - minX;
+      const handHeight = maxY - minY;
+      const handCenterX = minX + handWidth / 2;
+      const screenCenterX = window.innerWidth / 2;
+      const xOffset = screenCenterX - handCenterX
+      minX += xOffset;
+      maxX += xOffset;
     
       // Draw the bounding box
       const width = maxX - minX;
       const height = maxY - minY;
       context.strokeStyle = '#FF0000';
       context.lineWidth = 2;
-      context.strokeRect(minX, minY, width, height);
+      context.strokeRect(minX, minY, handWidth, handHeight, width, height);
     }
     
   }, []);
