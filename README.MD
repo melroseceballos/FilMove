@@ -34,7 +34,6 @@ Hi There! ![](https://user-images.githubusercontent.com/18350557/176309783-07859
     * Backend will be on localhost:3000
 
 ## Wireframes
-![](home.png)
 ![](Landing.png)
 ![](Movie.png)
 ![](Review.png)
