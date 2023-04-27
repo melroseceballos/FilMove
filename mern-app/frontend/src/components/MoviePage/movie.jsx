@@ -89,7 +89,6 @@ function Movie(){
         <br />
         <br />
         <br />
-        <h1>Test Me Again</h1>
         <div className='movieShow'>
         <br />
         <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
