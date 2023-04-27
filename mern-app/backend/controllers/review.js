@@ -101,7 +101,7 @@ router.get('/:id', function (req, res) {
 router.put('/:reviewid', authMiddleware, async (req, res) => {
     try {
       const updatedReview = await db.Review.findByIdAndUpdate(
-        req.params.reviewid, // <-- Update the ID parameter to "reviewid"
+        req.params.reviewid, // <-- Updated the ID parameter to "reviewid"
         { $set: req.body },
         { new: true }
       );
@@ -125,7 +125,6 @@ router.put('/:reviewid', authMiddleware, async (req, res) => {
 /********************* REVISED DELETE ROUTE */
 router.delete('/movie/reviews/:id', authMiddleware, async (req, res) => {
     try {
-        // Check if the user who sent the delete request is the same user who created the comment
         const userReview = await db.Review.findOneAndDelete({
             _id: req.params.id,
             userId: req.user.id
