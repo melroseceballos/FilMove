@@ -36,7 +36,6 @@ app.use('/api/users', usersCTRL)
 
 
 /*************** PORT */
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
-});
+app.listen(process.env.PORT, function () {
+    console.log('Express is listening to port', process.env.PORT)
+})
