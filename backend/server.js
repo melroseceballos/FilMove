@@ -22,7 +22,8 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
 // use the React build folder for static files
-app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html')))
+app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
+
 
 
 
