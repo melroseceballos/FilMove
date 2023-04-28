@@ -13,7 +13,7 @@ const db = require('../models')
 
 /* Require the JWT config
 --------------------------------------------------------------- */
-const config = require('../../../jwt.config.js')
+const config = require('../../jwt.config.js');
 
 
 /* Middleware that checks if a JWT sent from the client is valid.
