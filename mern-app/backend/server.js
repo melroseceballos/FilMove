@@ -23,16 +23,19 @@ app.use(express.json())
 
 // use the React build folder for static files
 app.use(express.static(path.join(path.dirname(__dirname), 'frontend', 'dist')))
-// Any other route not matching the routes above gets routed by React
-app.get('*', (req, res) => {
-    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
-});
 
 
 
 /*************** MOUTING ROUTES */
 app.use('/api/reviews', reviewCTRL)
 app.use('/api/users', usersCTRL)
+
+
+
+// Any other route not matching the routes above gets routed by React
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.dirname(__dirname), 'frontend', 'dist', 'index.html'));
+});
 
 
 /*************** PORT */
