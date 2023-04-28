@@ -14,7 +14,7 @@ const db = require('../models')
 
 
 //// JWT CONFIG ///
-const config = require('../../../jwt.config.js')
+const config = require('../../jwt.config.js')
 
  
 /************************ SIGN UP ROUTE ************************/
