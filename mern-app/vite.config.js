@@ -17,10 +17,6 @@ export default defineConfig({
                 ws: true,
             }
         }
-    },
-    build: {
-        rollupOptions: {
-            input: path.resolve(__dirname, 'frontend', 'index.jsx')
-        }
     }
 })
+
