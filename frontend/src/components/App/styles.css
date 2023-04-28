@@ -13,6 +13,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
+    border-bottom: 4px solid rgb(197, 38, 6);
+
   }
   
   nav h1 {
@@ -24,7 +26,7 @@ nav {
     color: #fff;
     text-decoration: none;
     margin: 0 1rem;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 a{
   text-decoration: none;
