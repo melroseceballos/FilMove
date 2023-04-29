@@ -7,12 +7,13 @@
   }
   
   .card{
-    border: 8px solid #fff187;
+    border: 4px solid #ff8652;
     height: 20rem;
     width: 15rem;
     margin-top: 1rem;
     text-align: center;
     position: relative;
+    border-radius: 2rem;
   }
   
   .card::before {
@@ -26,7 +27,8 @@
     background-image: url('/GenreCards.svg');
     background-size: cover;
     background-position: center;
-    opacity: 0.4;
+    opacity: 0.6;
+    border-radius: 1.5rem;
   }
   
   .card-text{
@@ -43,5 +45,7 @@
     text-align: center;
     color: white;
     padding-top: 3rem;
+    font-size: 5rem;
+    letter-spacing: 0.1rem;
   }
   

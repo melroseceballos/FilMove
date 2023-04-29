@@ -32,19 +32,250 @@
   
   
   
-.buttonContainers{
+  .buttonContainers {
     display: flex;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0;
     justify-content: center;
-    height: 2rem;
-    width: 100%;
-    gap: 20px;
-}
+    align-items: center;
+    height: 3rem;
+    gap: 30px;
+  }
+  
+  .buttonContainers button {
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #be4511b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
 
-.front{
-    height: 62.1rem;
-    width: 101%;
+  .front {
+    display: block;
+    width: 100vw;
+    height: auto;
     margin-left: -0.5rem;
   }
+
+
+  /**** MEDIA QUERIES **/
+
+  /* For screens smaller than 400px */
+  @media (max-width: 500px) {
+    .movieDiv {
+      margin-left: 0;
+      padding-top: 3rem;
+    }
+  
+    .movieContainer {
+      width: 10%;
+    }
+  
+    .movieTitle {
+      width: 70%;
+      font-size: 15px;
+      margin-top: -2.8rem;
+    }
+  
+    .movieContainer img {
+      height: 2rem;
+      width: 100%;
+      margin-right: 0.5rem;
+    }
+  
+    .buttonContainers {
+      height: 1.5rem;
+      gap: 10px;
+      padding-bottom: 2rem;
+    }
+  
+    .front {
+        margin-top: -20rem;
+      height: 62.1rem;
+  
+    }
+  }
+
+
+@media (max-width: 575.98px) {
+  .movieDiv {
+    padding-top: 3rem;
+    margin-top: -25rem;
+    padding-right: 1rem;
+
+  }
+
+  .movieContainer {
+    width: 40%;
+    margin-left: 1rem;
+  }
+
+  .movieTitle {
+    width: 70%;
+    font-size: 15px;
+    margin-top: -2.8rem;
+  }
+
+  .movieContainer img {
+    height: 15rem;
+  }
+
+  .buttonContainers {
+    height: 1.5rem;
+    gap: 10px;
+    padding-bottom: 2rem;
+  }
+
+  .front {
+    margin-top: -22rem;
+    height: 62.1rem;
+    margin-right: -5rem;
+
+  }
+}
+
+/* For screens between 576px and 767.98px */
+@media (min-width: 576px) and (max-width: 800.98px) {
+  .movieDiv {
+    margin-left: 2rem;
+    margin-top: -20rem;
+  }
+
+  .movieContainer {
+    width: 40.33%;
+  }
+
+  .movieTitle {
+    width: 60%;
+    font-size: 16px;
+    margin-top: -3rem;
+  }
+
+  .movieContainer img {
+    height: 18rem;
+   
+  }
+
+  .buttonContainers {
+    height: 1.5rem;
+    gap: 15px;
+    padding-bottom: 2rem;
+  }
+
+  .front {
+    height: 62.1rem;
+    margin-top: -16rem;
+  }
+}
+
+/* For screens between 768px and 991.98px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .movieDiv {
+    margin-left: 4rem;
+    margin-top: -15rem;
+  }
+
+  .movieContainer {
+    width: 35%;
+  }
+
+  .movieTitle {
+    width: 53%;
+    font-size: 17px;
+    margin-top: -3.5rem;
+  }
+
+  .movieContainer img {
+    height: 20rem;
+  }
+
+  .buttonContainers {
+    height: 2rem;
+    gap: 20px;
+    padding-bottom: 2rem;
+
+  }
+
+  .front {
+    height: 62.1rem;
+    margin-top: -12rem;
+  }
+}
+
+/* For screens between 992px and 1199.98px */
+@media (min-width: 992px) and (max-width: 1299.98px) {
+  .movieDiv {
+    margin-left: 6rem;
+  }
+
+  .movieContainer {
+    width: 30%;
+  }
+
+  .movieTitle {
+    width: 53%;
+    font-size: 17px;
+    margin-top: -3.5rem;
+  }
+
+  .movieContainer img {
+    height: 22rem;
+  }
+
+  .buttonContainers {
+    height: 2rem;
+    gap: 25px;
+    padding-bottom: 2rem;
+  }
+
+  .front {
+    height: 62.1rem;
+    margin-top: -8rem;
+  }
+}
+
+/* For screens larger than 1200px */
+@media (min-width: 1300px) {
+  .movieDiv {
+    margin-left: 2rem;
+  }
+
+  .movieContainer {
+    width: 20%;
+  }
+
+  .movieTitle {
+    width: 53%;
+    font-size: 17px;
+    margin-top: -3.5rem;
+  }
+
+  .movieContainer img {
+    height: 20rem;
+  }
+  .buttonContainers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    gap: 30px;
+    padding-bottom: 2rem;
+  }
+  
+  .buttonContainers button {
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #be4511b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  .front {
+    height: 62.1rem;
+    margin-top: -5rem;
+  }
+}
