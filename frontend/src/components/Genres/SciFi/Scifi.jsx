@@ -48,7 +48,7 @@ function SciFi(){
             movie.title && (
                 <>
                 <div key={movie.id} className='movieContainer'>
-                    <h1 className='movieTitle'>{movie.title}</h1>
+                    {/* <h1 className='movieTitle'>{movie.title}</h1> */}
                     <Link to = {`/movie/${movie.id}`}>
                     <img key={movie.id} src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
                     </Link>

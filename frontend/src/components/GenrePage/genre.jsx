@@ -128,9 +128,9 @@ function Genre() {
         </div>
         </Link>
 
-        <div className='card'>
+        {/* <div className='card'>
           <div className='card-text'>Shorts</div>
-        </div>
+        </div> */}
       </div>
     </>
   )
