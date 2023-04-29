@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { signUp, logIn } from "../../../utils/backend"
+import './styles.css'
 
 
 function AuthFormPage() {
@@ -39,11 +40,13 @@ formType === 'login' ? actionText = 'Log In' : actionText = 'Sign Up'
     return (
         <div>
             <div>
+            <img className= 'logInBG' src='/LogIn.svg'/>
                 <h2>Login</h2>
-                <form onSubmit={handleSubmit}>
+                <form className="logInForm" onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="email">Email</label>
                         <input
+                        className="authEmail"
                             id="email"
                             name="email"
                             type="email"
@@ -56,6 +59,7 @@ formType === 'login' ? actionText = 'Log In' : actionText = 'Sign Up'
                     <div>
                         <label htmlFor="password">Password</label>
                         <input
+                        className="authPassword"
                             id="password"
                             name="password"
                             type="password"
@@ -67,7 +71,7 @@ formType === 'login' ? actionText = 'Log In' : actionText = 'Sign Up'
                         />
                     </div>
                     <div>
-                    <button type="submit">{actionText}</button>
+                    <button className="authBtn" type="submit">{actionText}</button>
                     </div>
                 </form>
             </div>

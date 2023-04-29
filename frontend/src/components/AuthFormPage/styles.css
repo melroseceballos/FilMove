@@ -1,0 +1,154 @@
+.logInBG {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: auto;
+    margin-left: -0.5rem;
+  }
+  
+  .logInForm {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .authEmail{
+    width: 22rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  .authPassword{
+    width: 22rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+  .authBtn{
+    width: 10rem;
+    height: 2.5rem;
+    background-color: #fd9437b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  /******* MEDIA QUERY *****/
+  @media only screen and (max-width: 300px) {
+    .logInForm {
+        position: absolute;
+        top: 20% !important;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 10px;
+      }
+      .authEmail{
+        width: 10rem;
+      }
+      .authPassword{
+        width: 10rem;
+      }
+    }
+  @media only screen and (max-width: 400px) {
+    .logInForm {
+        position: absolute;
+        top: 40% !important;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 10px;
+      }
+      .authEmail{
+        width: 10rem;
+      }
+      .authPassword{
+        width: 10rem;
+      }
+    }
+
+  
+  @media only screen and (max-width: 500px) {
+    .logInForm {
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 10px;
+      }
+      .authEmail{
+        width: 12rem;
+      }
+      .authPassword{
+        width: 10rem;
+      }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .logInForm {
+      position: absolute !important;
+      top: 50% !important;
+      left: 50%;
+      transform: translate(-50%, -100%);
+      width: 100%;
+      padding: 10px;
+    }
+    .authEmail {
+      width: 10rem;
+    }
+    .authPassword {
+      width: 10rem;
+    }
+  }
+  
+  
+  @media only screen and (max-width: 899px) {
+    .logInForm {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 10px;
+      }
+      .authEmail{
+        width: 10rem;
+      }
+      .authPassword{
+        width: 10rem;
+      }
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    .logInForm {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 10px;
+      }
+      .authEmail{
+        width: 10rem;
+      }
+      .authPassword{
+        width: 10rem;
+      }
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .logInForm {
+      width: 50%;
+      margin-top: -2rem;
+    }
+  }
+  
+  
