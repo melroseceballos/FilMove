@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateReview,showReviews } from '../../../utils/backend';
+import './styles.css'
 
 
 function EditReview() {
@@ -59,11 +60,12 @@ function EditReview() {
       <br />
       <br />
       <br />
-      <h1>Edit Your Review</h1>
+      <h1 className='editReview'>Edit Your Review</h1>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="reviewer">Reviewer</label>
+          <label className='reviewerHead' htmlFor="reviewer">Reviewer</label>
           <input
+          className='editReviewer'
             type="text"
             id="reviewer"
             name="reviewer"
@@ -72,8 +74,9 @@ function EditReview() {
           />
         </div>
         <div>
-          <label htmlFor="rate">Rating</label>
+          <label className='rating' htmlFor="rate">Rating</label>
           <input
+          className='editRating'
             type="number"
             id="rate"
             name="rate"
@@ -82,15 +85,16 @@ function EditReview() {
           />
         </div>
         <div>
-          <label htmlFor="content">Content</label>
+          <label className='contentHead' htmlFor="content">Content</label>
           <textarea
+          className='contentArea'
             id="content"
             name="content"
             value={formValues.content }
             onChange={handleChange}
           />
         </div>
-        <button type="submit">Update Review</button>
+        <button className="updateBtn" type="submit">Update Review</button>
       </form>
     </div>
   );

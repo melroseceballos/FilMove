@@ -1,0 +1,56 @@
+.editReview{
+    color: wheat;
+    text-align: center;
+    margin-top: 4rem;
+    font-size: 4rem;
+    font-weight: 700;
+}
+.editReviewer{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.reviewerHead{
+    color: rgb(232, 113, 62);
+    font-size: 2rem;
+    margin-top: -4rem !important;
+    display: block;
+}
+.editRating{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    height: 2rem;
+    margin-top: 1rem;
+}
+.rating{
+    color: rgb(232, 113, 62);
+    font-size: 2rem;
+}
+.contentHead{
+    color: rgb(232, 113, 62);
+    font-size: 2rem;
+    display: block;
+    margin-top: 1rem;
+
+}
+.contentArea{
+    margin-top: 1rem;
+    width: 35rem;
+    height: 10rem;
+    text-align: center;
+}
+.updateBtn{
+    width: 10rem;
+height: 2.5rem;
+background-color: #fd9437b3;
+color: white;
+border: none;
+border-radius: 5px;
+font-size: 1.2rem;
+cursor: pointer;
+margin: 0 auto;
+margin-top: 1rem;
+}
