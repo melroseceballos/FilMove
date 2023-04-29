@@ -1,8 +1,22 @@
+
 .trailer{
-    margin-top: -20rem;
-    width: 67rem;
-    margin-left: -8.4rem;
+   padding-top: 10rem;
+    width: 80rem;
 }   
 .trailerMovie{
-    width: 80%;
+    width: 110%;
+    margin-left: -12rem;
+
+}
+
+/***** MEDIA QUERIES ***/
+@media screen and (max-width: 1299.98px) {
+    .trailer{
+        margin-top: -26rem;
+        width: 70rem;
+        margin-left: -4rem;
+    }
+    .trailerMovie{
+        width: 76%;
+    }
 }

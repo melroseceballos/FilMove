@@ -101,7 +101,7 @@ function Movie(){
         </div>
         </div>
         <div className='movie'>
-            <h1>Movie Goes Here</h1>
+            {/* <h1>Movie Goes Here</h1> */}
             <Trailer />
         
         </div>

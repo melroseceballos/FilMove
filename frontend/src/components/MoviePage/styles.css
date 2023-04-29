@@ -23,7 +23,6 @@
 .movie{
    margin-left: 27rem;
    margin-top: -58rem;
-   /* border: 3px solid #ff8552; */
    text-align: center;
    width: 20%;
    height: 10rem;
@@ -129,3 +128,194 @@ margin: 0 auto;
 margin-top: 1rem;
 margin-left: 1rem;
 }
+
+
+
+
+/**** MEDIA QUERIES **/
+/* CSS for screens up to 400px wide */
+@media screen and (max-width: 400px) {
+    .movieShow img {
+        height: auto;
+        width: 120%;
+        margin-left: 18rem;
+    }
+    .overview {
+      width: 100%;
+      margin-left: 21rem;
+      margin-top: 1rem;
+    }
+    .movie {
+      margin-left: 0;
+      margin-top: 1rem;
+      width: 100%;
+      padding-top: 0;
+      height: auto;
+    }
+    .reviews {
+      margin-left: 18rem;
+      margin-top: -4rem;
+      width: 100%;
+      height: auto;
+      padding-top: 30rem;
+      padding-bottom: 1rem;
+    }
+    .trailer {
+        margin-left: 8rem !important;
+        width: 10rem;
+      }
+      .trailerMovie{
+        margin-top: 12rem;
+          width: 10rem;
+      
+      }
+      .createBtn{
+        margin-top: -25rem;
+      }
+    }
+  
+  /* CSS for screens between 401px and 500px wide */
+  @media screen and (min-width: 401px) and (max-width: 500px) {
+    .movieShow img {
+      height: auto;
+      width: 100%;
+      margin-left: 18rem;
+    }
+    .overview {
+      width: 100%;
+      margin-left: 18rem;
+      margin-top: 1rem;
+    }
+    .movie {
+      margin-left: 0;
+      margin-top: 1rem;
+      width: 100%;
+      padding-top: 0;
+      height: auto;
+    }
+    .reviews {
+      margin-left: 18rem;
+      margin-top: 10rem !important;
+      width: 100%;
+      height: auto;
+      padding-top: 0;
+      padding-bottom: 1rem;
+    }
+    .trailer {
+      margin-top: 25rem;
+      margin-left: 4rem !important;
+      width: 200rem;
+    }
+    .trailerMovie{
+        width: 200rem;
+        margin-top: 15rem;
+    }
+  }
+  
+  /* CSS for screens between 501px and 575.98px wide */
+  @media screen and (min-width: 501px) and (max-width: 575.98px) {
+    .movieShow img {
+        height: auto;
+        width: 120%;
+        margin-left: 10rem;
+    }
+    .overview {
+      width: 100%;
+      margin-left: 13rem;
+      margin-top: 1rem;
+    }
+    .movie {
+      margin-left: 0;
+      margin-top: 1rem;
+      width: 100%;
+      padding-top: 0;
+      height: auto;
+    }
+    .reviews {
+      margin-left: 15rem;
+      margin-top: -2rem;
+      width: 100%;
+      height: auto;
+      padding-top: 30rem;
+      padding-bottom: 1rem;
+    }
+    .trailer {
+        margin-top: -12rem !important;
+        margin-left: 3rem !important;
+        width: 10rem;
+      }
+      .trailerMovie{
+          width: 10rem;
+      }
+      .createBtn{
+        margin-top: -25rem;
+      }
+  }
+  
+  /* CSS for screens between 576px and 800.98px wide */
+  @media screen and (min-width: 700px) and (max-width: 800.98px) {
+    .movieShow img {
+      height: auto;
+      max-width: 100%;
+    }
+    .overview {
+      width: 66%;
+      margin-left: 1rem;
+      margin-top: -0.2rem;
+    }
+    .movie {
+      margin-left: 27rem;
+      margin-top: -58rem;
+      width: 20%;
+      height: 10rem;
+      padding-top: 13rem;
+    }
+    .trailer{
+      margin-top: -33rem !important;
+      margin-left: 6rem !important;
+    }
+    .reviews{
+      padding-left: 10rem;
+    }
+    .createBtn{
+      margin-top: -14rem;
+    }
+  }
+  @media screen and (min-width: 850px) and (max-width: 1000px) {
+    .movieShow img {
+      height: auto;
+      max-width: 100%;
+    }
+    .overview {
+      margin-left: 1rem;
+      margin-top: -0.2rem;
+      width: 31rem;
+    }
+    .movie {
+      margin-left: 27rem;
+      margin-top: -58rem;
+      width: 20%;
+      height: 10rem;
+      padding-top: 13rem;
+    }
+    .reviews{
+        margin-right: -5rem;
+        padding-left: 8rem;
+        margin-top: 15rem;
+    }
+    .reviewDiv{
+        padding: 0;
+        width: 130%;
+    }
+    .createBtn{
+        margin-top: -18rem;
+    }
+    .trailer{
+      margin-top: -33rem !important;
+      margin-right: -20rem !important;
+      padding-left: 10rem !important;
+    }
+    
+  }
+
+ 
