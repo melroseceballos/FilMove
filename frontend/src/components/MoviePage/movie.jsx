@@ -95,9 +95,9 @@ function Movie(){
         <div className='overview'>
         <h1>{movie.title}</h1>
         <p className='synopsis'>{movie.overview}</p>
-        <p><strong>Release Date: </strong>{movie.release_date}</p>
-        <p><strong>Movie Rating: </strong>{movie.vote_average}</p>
-        <p><strong>Vote Count:</strong>{movie.vote_count}</p>
+        <p className='synopsisDeets'><strong>Release Date: </strong>{movie.release_date}</p>
+        <p className='synopsisDeets'><strong>Movie Rating: </strong>{movie.vote_average}</p>
+        <p className='synopsisDeets'><strong>Vote Count:</strong>{movie.vote_count}</p>
         </div>
         </div>
         <div className='movie'>
@@ -106,30 +106,33 @@ function Movie(){
         
         </div>
         <div className='reviews'>
-           <h1 className='reviewsTitle'>Reviews</h1>
+           {/* <h1 className='reviewsTitle'>Movie Reviews</h1> */}
 
         {/* // CREATE BUTTON //  */}
-           <button onClick={toggleCreateForm}>
+           <button className='createBtn' onClick={toggleCreateForm}>
            {btnText}
            </button>
            {showForm && 
            <form className='createFormDiv'>
            <input 
            name='reviewer'
+           className='reviewerBox'
            value={ createForm.reviewer} 
            placeholder='Your Name'
            onChange={handleReviewChange} />
            <input 
            name='rate'
+           className='reviewerRate'
            value={ createForm.rate } 
            placeholder='Rate the movie from 0/10 ...'
            onChange={handleReviewChange}/>
            <textarea 
            name='content'
+           className='contentBox'
             value={ createForm.content } 
             placeholder='Share Your Thoughts...'
             onChange={handleReviewChange}/>
-            <button onClick={handleSubmit}>Post</button>
+            <button className='postBtn' onClick={handleSubmit}>Post</button>
        </form>
            }
            
@@ -140,8 +143,8 @@ function Movie(){
         <p><strong>{review.rate} / 10 </strong></p>
         <p>{review.content}</p>
         <div className='reviewButtons'>
-          <button onClick={() =>{navigate(`/review/edit/${review._id}`)}}>Edit</button>
-          <button onClick={() => handleDelete(review._id)}>Delete</button>
+          <button className="reviewEditBtn" onClick={() =>{navigate(`/review/edit/${review._id}`)}}>Edit</button>
+          <button className="reviewDelBtn" onClick={() => handleDelete(review._id)}>Delete</button>
         </div>
       </div>
   ))}

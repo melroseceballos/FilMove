@@ -2,7 +2,7 @@ body::-webkit-scrollbar{
     display: none;
 }
 nav {
-    background-color: #ff8652;
+    background-color: #882b03;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    border-bottom: 4px solid rgb(197, 38, 6);
+    border-bottom: 4px solid rgb(215, 50, 17);
 
   }
   

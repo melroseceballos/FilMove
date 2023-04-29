@@ -27,6 +27,7 @@ function Trailer() {
                     <p>No trailer available</p>
                 ) : (
                     <iframe
+                        className='trailerMovie'
                         title="Trailer"
                         width="1330"
                         height="524"
