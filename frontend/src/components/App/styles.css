@@ -31,3 +31,121 @@ nav {
 a{
   text-decoration: none;
 }
+
+/******* MEDIA QUERIES *****/
+/* For max width 500px */
+@media only screen and (max-width: 500px) {
+  nav {
+    height: 4rem;
+    padding: 0 0.5rem;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* For max width 575.98px */
+@media only screen and (max-width: 575.98px) {
+  nav {
+    height: 4rem;
+    padding: 0 0.5rem;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* For max width 800.98px */
+@media only screen and (max-width: 800.98px) {
+  nav {
+    height: 4rem;
+    padding: 0 1rem;
+  }
+
+  nav h1 {
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    margin: 0 0.8rem;
+    font-size: 1.3rem;
+  }
+}
+
+/* For max width 991.98px */
+@media only screen and (max-width: 991.98px) {
+  nav {
+    height: 5rem;
+    padding: 0 1rem;
+  }
+
+  nav h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    margin: 0 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* For max width 1299.98px */
+@media only screen and (max-width: 1299.98px) {
+  nav {
+    height: 5rem;
+    padding: 0 1.5rem;
+  }
+
+  nav h1 {
+    font-size: 1.5rem;
+  }
+
+  nav a {
+    margin: 0 1.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* For max width 699.98px */
+@media only screen and (max-width: 699.98px) {
+  nav {
+    height: 4rem;
+    padding: 0 0.5rem;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  nav {
+    height: 3.5rem;
+    padding: 0 0.5rem;
+  }
+
+  nav h1 {
+    font-size: 1.1rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.3rem;
+  }
+}
