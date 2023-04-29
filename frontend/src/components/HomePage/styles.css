@@ -12,6 +12,7 @@
     width: 16%;
     padding-bottom: 5rem;
 }
+
 .movieTitle{
     position: absolute;
     top: 0;
@@ -27,10 +28,12 @@
 .movieContainer img {
     height: 23rem;
     border-radius: 1rem;
-    border: 4px solid transparent;
+    box-shadow: 0 2px 6px rgb(255, 255, 255);
   }
-  
-  
+.movieContainer img:hover{
+    border: 4px solid rgb(245, 92, 37);
+  box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+}
   
   .buttonContainers {
     display: flex;
@@ -41,7 +44,7 @@
   }
   
   .buttonContainers button {
-    width: 10rem;
+    width: 15rem;
     height: 2.5rem;
     background-color: #be4511b3;
     color: white;
@@ -49,6 +52,9 @@
     border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
+  }
+  .buttonContainers button:hover{
+    background-color: #e85e23;
   }
 
   .front {
@@ -83,6 +89,10 @@
       width: 100%;
       margin-right: 0.5rem;
     }
+    .movieContainer img:hover{
+        border: 4px solid rgb(245, 92, 37);
+      box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+    }
   
     .buttonContainers {
       height: 1.5rem;
@@ -110,6 +120,7 @@
     width: 40%;
     margin-left: 1rem;
   }
+  
 
   .movieTitle {
     width: 70%;
@@ -120,7 +131,10 @@
   .movieContainer img {
     height: 15rem;
   }
-
+  .movieContainer img:hover{
+    border: 4px solid rgb(245, 92, 37);
+  box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+}
   .buttonContainers {
     height: 1.5rem;
     gap: 10px;
@@ -156,6 +170,10 @@
     height: 18rem;
    
   }
+  .movieContainer img:hover{
+    border: 4px solid rgb(245, 92, 37);
+  box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+}
 
   .buttonContainers {
     height: 1.5rem;
@@ -189,6 +207,10 @@
   .movieContainer img {
     height: 20rem;
   }
+  .movieContainer img:hover{
+    border: 4px solid rgb(245, 92, 37);
+  box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+}
 
   .buttonContainers {
     height: 2rem;
@@ -222,6 +244,10 @@
   .movieContainer img {
     height: 22rem;
   }
+  .movieContainer img:hover{
+    border: 4px solid rgb(245, 92, 37);
+  box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+}
 
   .buttonContainers {
     height: 2rem;
@@ -254,6 +280,11 @@
   .movieContainer img {
     height: 20rem;
   }
+  .movieContainer img:hover{
+    border: 4px solid rgb(245, 92, 37);
+  box-shadow: 0px 0px 10px rgba(245, 92, 37, 0.5);
+}
+
   .buttonContainers {
     display: flex;
     justify-content: center;
