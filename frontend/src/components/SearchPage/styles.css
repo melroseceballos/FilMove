@@ -11,6 +11,7 @@ form input{
     text-align: left;
     margin-left: 8rem;
     font-weight: 700;
+    color: wheat;
 }
 .searchContainer{
     width: 15rem;
@@ -20,6 +21,73 @@ form input{
     
 }
 .searchContainer img{
-    height: 20rem;
     vertical-align: middle;
+    height: 23rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgb(255, 255, 255);
+}
+.searchContainer img:hover{
+    border: 3px solid orangered;
+}
+.searchTitle{
+    color: wheat;
+}
+.searchTitles{
+    color: wheat;
+}
+@media screen and (max-width: 400px){
+    .searchContainer img{
+        margin-left: -12rem;
+    }
+    .searchTitles{
+        margin-left: -12rem;
+    }
+
+}
+@media screen and (max-width: 599px){
+    .searchContainer img{
+        margin-left: -12rem !important;
+    }
+    .searchTitles{
+        margin-left: -12rem !important;
+    }
+
+}
+@media screen and (max-width: 600px){
+    .searchContainer img{
+        margin-left: -12rem;
+    }
+    .searchTitles{
+        margin-left: -12rem;
+    }
+
+}
+@media screen and (max-width: 850px){
+    .searchContainer img{
+        margin-left: 2rem;
+    }
+    .searchTitles{
+        margin-left: 2rem;
+    }
+
+}
+@media screen and (max-width: 950px){
+    .searchContainer img{
+        margin-left: 5rem;
+    }
+    .searchTitles{
+        margin-left: 7rem;
+        text-align: center;
+    }
+
+}
+@media screen and (max-width: 1100px){
+    .searchContainer img{
+        margin-left: -5rem;
+    }
+    .searchTitles{
+        margin-left: -7rem;
+        text-align: center;
+    }
+
 }

@@ -13,7 +13,7 @@ function Search(){
             const results = queryResults.map((movies) => (
                 <>
                     <div key={movies.id} className="searchContainer">
-                    <h2>{movies.title}</h2>
+                    <h2 className='searchTitles'>{movies.title}</h2>
                     <Link to = {`/movie/${movies.id}`}>
                     <img key={movies.id} src={`https://image.tmdb.org/t/p/w500/${movies.poster_path}`} alt={movies.title} className='searchMovies'/>
                     </Link>
@@ -46,7 +46,7 @@ function Search(){
         <div>
             <form onSubmit={handleQuerySubmit} className='searchBar'>
                 <label htmlFor='search'>
-                    <h1>Search Any Movie!</h1>
+                    <h1 className='searchTitle'>Search Any Movie!</h1>
                 </label>
                 <input
                 name="search"
