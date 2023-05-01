@@ -13,7 +13,7 @@
 }
 .overview{
     background-color: rgba(135, 221, 236, 0.883);
-    width: 26%;
+    width: 29.5%;
     margin-top: -0.2rem;
     padding-top: .5rem;
     text-align: center;
@@ -22,13 +22,14 @@
 }
 .movie{
    margin-left: 35rem;
-   margin-top: -58rem;
+   margin-top: -40rem;
    text-align: center;
    width: 20rem;
    margin-top: -70rem;
+   padding-top: 10rem;
 }
 .reviews{
-    margin-left: 28rem;
+    margin-left: 25rem;
     width: 68%;
     text-align: center;
     padding-bottom: 5rem;
