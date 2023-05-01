@@ -23,6 +23,7 @@ function Trailer() {
             /// had to use chatGPT on how to retrieve this because I have looked everywhere
             // not one article about retrieving trailer key for trailer movieDBAPI */}
             <div className='trailer'>
+                {/* // if there's no trailer key from movieDB API  */}
                 {!trailer || !trailer.key ? (
                     <p>No trailer available</p>
                 ) : (
