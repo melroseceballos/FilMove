@@ -11,6 +11,7 @@ color: white
     justify-content: center;
     align-items: center; 
     padding-bottom: 5rem;
+    background-size: contain;
 }
 .topContainer img{
     vertical-align: middle; 

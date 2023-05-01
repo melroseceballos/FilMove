@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     padding-top: 2rem;
+    background-size: cover;
   }
   
   .card{
@@ -28,7 +29,7 @@
     background-image: url('/GenreCards.svg');
     background-size: cover;
     background-position: center;
-    opacity: 0.6;
+    opacity: 0.8;
     border-radius: 1.5rem;
   }
   

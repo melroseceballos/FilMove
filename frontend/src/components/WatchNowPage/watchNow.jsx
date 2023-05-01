@@ -30,7 +30,6 @@ function Watch(){
         <br/>
         <br/>
         <br />
-        <p className='refresh'>Don't like the movie? Refresh to get a new movie!</p>
         {/* <h1>{movie?.title}</h1> */}
         <Link to = {`/movie/${movie?.id}`}>
             <container className="watchContainer">
