@@ -2,7 +2,9 @@
 height: 5rem;
 text-align: center;
 font-size: 3rem;
-color: white
+color: white;
+padding-top: 2rem;
+
 }
 .topContainer{
     text-align: center;
@@ -51,5 +53,6 @@ border: 3px solid orangered;
   @media screen and (max-width: 1299.98px) {
     .topContainer img {
       max-width: 100%;
+      margin-top: 4rem;
     }
   }
